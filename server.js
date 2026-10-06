@@ -33,6 +33,7 @@ io.on("connection", (socket) => {
 
 socket.on("ready", () => {
     socket.emit("init", {id: id, players:players})
+    socket.broadcast.emit("playerjoined", players[id])
 });
 
 
